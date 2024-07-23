@@ -1,0 +1,16 @@
+.root
+  .textStroke
+    position: relative
+    font-size: 5rem
+    -webkit-text-stroke: .5px #4bb2f8
+    color: #fff79a
+    font-weight: 800
+    font-family: "Chakra Petch", sans-serif
+    letter-spacing: .5rem
+    &::before
+      content: attr(data-txt)
+      position: absolute
+      left: -.3rem
+      top: -.8rem
+      -webkit-text-stroke: .5px #4bb2f8
+      color: #ffffff

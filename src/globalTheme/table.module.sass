@@ -1,0 +1,38 @@
+@use 'src/globalTheme/variables.module.sass' as vrbs
+
+.table
+    background: #fff
+    overflow: auto
+    table
+        overflow: auto
+        border-radius: 4px
+    .thead
+        background-color: vrbs.$cSecondary
+        th
+            font-weight: bold
+            font-size: 1rem
+            color: rgba(0, 0, 0, 0.87)
+            padding: 0.4rem 0.5rem
+            border-right: #444 1px solid
+            border-bottom: #444 1px solid
+        &:first-child
+            border-left: #444 1px solid
+            border-top: #444 1px solid
+    .tbody
+        background-color: rgba(vrbs.$cSecondary,0.14)
+        tr
+            border-left: #444 1px solid
+        tr:nth-child(even)
+            background-color: rgba(96, 140, 190, 0.2)
+        td
+            padding: 0.4rem 0.5rem
+            border-right: #444 1px solid
+            border-bottom: #444 1px solid
+
+.subTheme
+    .thead
+        background-color: #0e2d33
+        th
+            color: white
+    .tbody
+        background-color: rgba(#ffffff,0.14)

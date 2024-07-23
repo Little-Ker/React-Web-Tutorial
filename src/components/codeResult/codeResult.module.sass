@@ -1,0 +1,42 @@
+@use 'src/globalTheme/variables.module' as vrbs
+
+.codeResult
+  position: relative
+  margin: 1rem 0
+  .codeBorder
+    border: 2px solid vrbs.$cPrimary
+    border-radius: 5px
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    margin-bottom: 1rem
+    background-color: #fff
+    min-height: 100px
+  .resultTitle
+    text-align: left
+    font-weight: 700
+    padding: 3px 20px
+    width: 100%
+    color: vrbs.$cPrimary
+    background-color: #ddd
+    font-size: 14px
+    z-index: 1
+  .result
+    width: 100%
+    background-color: #fff
+    padding: 1rem
+    padding: 1rem 2rem
+    background: #fff
+    z-index: 2
+  .footer
+    position: absolute
+    bottom: 0
+    left: 0
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    width: 100%
+    padding: .5rem 1rem
+    z-index: 2

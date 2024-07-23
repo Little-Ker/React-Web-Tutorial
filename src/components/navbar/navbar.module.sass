@@ -1,0 +1,88 @@
+@use 'src/globalTheme/variables.module' as vrbs
+
+.root
+  position: relative
+  left: 0
+  top: 0
+  display: flex
+  flex-direction: column
+  background: vrbs.$cNavBackground
+  width: 280px
+  height: 100vh
+  min-width: 280px
+  max-height: 100vh
+  overflow: auto
+  z-index: 99
+  color: vrbs.$cText
+  text-align: left
+  overflow-y: auto
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px
+  padding: 1rem
+  &.drawerClose
+    min-width: 78px
+    max-width: 78px
+    width: 78px
+    transition: .3s all
+  .websiteTitle
+    padding: 1rem .5rem
+    align-self: center
+    color: vrbs.$cText
+    letter-spacing: 2px
+    position: relative
+    text-align: center
+    font-weight: bold
+    width: 100%
+    font-size: 1.2rem
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .title
+      margin-right: .3rem
+    .drawerBtn
+      background: vrbs.$cText
+      border-radius: 3px
+  .mainLink
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: .3rem 0
+    padding: .8rem .6rem
+    border-radius: .5rem
+    transition: .3s all
+    color: vrbs.$cText
+    cursor: pointer
+    text-decoration: none
+    font-weight: bold
+    &__Title
+      display: flex
+      align-items: center
+    &__Text
+      margin: 0 .5rem
+      font-size: 16px
+    &--open
+      transform: rotate(90deg)
+    &--active
+      background: rgba(vrbs.$cText, 15%)
+    &:hover
+      color: vrbs.$cSecondary
+  .subLink
+    margin-left: .6rem
+    position: relative
+    display: flex
+    align-items: center
+    color: vrbs.$cText
+    text-decoration: none
+    border-radius: .5rem
+    transition: .3s all
+    margin: .3rem 0
+    font-size: 16px
+    letter-spacing: 1px
+    font-weight: bold
+    &__dot
+      width: 10px
+      margin-left: 2.5rem
+      margin-right: .7rem
+    &:hover
+      color: vrbs.$cSecondary
+    &--active
+      background: rgba(vrbs.$cText, 15%)

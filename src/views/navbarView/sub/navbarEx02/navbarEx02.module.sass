@@ -1,0 +1,154 @@
+@use '../../../../styles/variable' as variable
+
+$navbarBgColor: #000000
+$linkColor: #73c991
+
+$subMenuBgColor: #000000
+$subLinkColor: #73c991
+
+$socialLinkColor: #ffffff
+$hamburgerBtnColor: #ffffff
+
+.navbarEx01
+  height: 372px
+  width: 100%
+  overflow: hidden
+  border: 3px solid $navbarBgColor
+.navbar
+  width: 100%
+  display: flex
+  align-items: center
+  flex-direction: column
+  padding: .5rem 2rem
+  background: $navbarBgColor
+  position: relative
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px
+  +variable.desktop
+    flex-direction: row
+    justify-content: space-between
+  .logo
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background: #aaa
+    flex: 0 0 auto
+  .sidebar
+    display: flex
+    justify-content: center
+    width: 100%
+    +variable.desktop
+      background: $navbarBgColor
+      height: 300px
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+      width: 200px
+      position: absolute
+      padding: 1rem .5rem
+      right: 0
+      top: 66px
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+      right: -100%
+      transition: .5s all
+    &.showMenu
+      right: 0
+  .menu, .socialMenu
+    display: flex
+    align-items: center
+    +variable.desktop
+      box-shadow: none
+      overflow-y: auto
+    .link
+      color: $linkColor
+      padding: .7rem .5rem
+      margin: .3rem 1rem
+      letter-spacing: 1px
+      display: block
+      position: relative
+      cursor: pointer
+  .menu
+    +variable.desktop
+      flex-direction: column
+  .mainLink
+    +variable.desktop
+      padding: 0 !important
+  .mainLinkTitle
+    +variable.desktop
+      padding: .2rem 0
+  .subMenu
+    position: absolute
+    top: 55px
+    left: -40px
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px
+    width: 150px
+    opacity: 0
+    transition: .3s all
+    visibility: hidden
+    +variable.desktop
+      position: relative
+      visibility: visible
+      opacity: 1
+      top: auto
+      left: 0
+      border: 0
+      max-height: 0
+      overflow: hidden
+      transition: .3s all
+    &.showSubMenu
+      +variable.desktop
+        max-height: 180px
+    .subLink
+      background: $subMenuBgColor
+      margin: 0
+      color: $subLinkColor
+      +variable.desktop
+        color: $subLinkColor
+        background: transparent
+  .link:hover .subMenu
+    visibility: visible
+    opacity: 1
+  .hamburgerBtn
+    display: none
+    cursor: pointer
+    padding: 1rem
+    position: relative
+    .hamburger
+      position: relative
+      width: 25px
+      height: 3px
+      background: $hamburgerBtnColor
+      border-radius: 10px
+      transition: .3s all
+      &::before, &::after
+        content: ''
+        width: 25px
+        height: 3px
+        background: $hamburgerBtnColor
+        position: absolute
+        right: 0
+        transition: .3s all
+        border-radius: 10px
+      &::before
+        top: -10px
+      &::after
+        top: 10px
+    +variable.desktop
+      display: block
+    .crossBtn
+      width: 0px
+      &::before
+        transform: rotate(45deg)
+        top: 0
+      &::after
+        transform: rotate(-45deg)
+        top: 0
+
+  ::-webkit-scrollbar 
+    width: 4px
+  ::-webkit-scrollbar-track-piece 
+    background: transparent
+  ::-webkit-scrollbar-thumb 
+    background-color: #eeeeee63
+    border-radius: 5px
+  ::-webkit-scrollbar-track 
+    box-shadow: transparent

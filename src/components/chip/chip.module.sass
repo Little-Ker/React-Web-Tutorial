@@ -1,0 +1,14 @@
+@use 'src/globalTheme/variables.module' as vrbs
+
+.chip
+  display: flex
+  align-items: center
+  &__label
+    background-color: vrbs.$cSecondary
+    color: vrbs.$cText
+    padding: 0.1rem 0.5rem
+    font-size: 12px
+    margin-right: 0.5rem
+    border-radius: 5px
+  &__errLabel
+    background-color: vrbs.$cError

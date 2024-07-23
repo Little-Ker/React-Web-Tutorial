@@ -1,0 +1,20 @@
+@use 'src/globalTheme/variables.module' as vrbs
+
+.invalidPage
+  height: calc(100vh - 4rem)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  &__title
+    font-size: 6rem
+    color: rgba(vrbs.$cSecondary, 0.85)
+    margin: 0
+    letter-spacing: 10px
+    font-weight: bold
+    margin-top: -6rem
+  &__text
+    font-size: 1rem
+    font-weight: bold
+    color: rgba(vrbs.$cSecondary, 0.85)
+    letter-spacing: 1px

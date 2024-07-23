@@ -1,0 +1,45 @@
+@use 'src/globalTheme/variables.module' as vrbs
+
+= xxs
+  @media only screen and (max-width: vrbs.$xxs-size)
+    @content
+
+= xs
+  @media only screen and (max-width: vrbs.$xs-size)
+    @content
+
+= sm
+  @media only screen and (max-width: vrbs.$sm-size)
+    @content
+
+= md
+  @media only screen and (max-width: vrbs.$md-size)
+    @content
+
+=absCenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+=size($width, $height:$width)
+  width: $width
+  height: $height
+
+=button($backgroundColor, $textColor)
+  background-color: $backgroundColor
+  color: $textColor
+  &:hover
+    background-color: darken($backgroundColor, 20%)
+    color: darken($textColor, 25%)
+    cursor: pointer
+  &[disabled]
+    background-color: lighten(vrbs.$clrDisabled, 20%)
+    color: vrbs.$clrDisabled
+    cursor: not-allowed
+
+=textStroke($color, $strokeColor)
+  color: $color
+  -webkit-text-stroke: 1px $strokeColor
+  text-stroke: 1px $strokeColor
+  font-weight: 800

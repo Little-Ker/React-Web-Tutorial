@@ -1,0 +1,19 @@
+@use 'src/globalTheme/variables.module' as vrbs
+
+.root
+  .buttons
+    display: flex
+    justify-content: flex-end
+  .btnGroup
+    .lightBtn
+      background: vrbs.$cButton
+      color: vrbs.$cButtonText
+      &:hover
+        background: vrbs.$cButtonHover
+    .darkBtn
+      background: vrbs.$cContrastButton
+      color: vrbs.$cButtonText
+      &:hover
+        background: vrbs.$cContrastButtonHover
+    .closeBtn
+      background: vrbs.$cDisabled
