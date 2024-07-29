@@ -1,0 +1,73 @@
+.root
+  position: relative
+  padding: 1rem
+  display: flex
+  .display
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-right: 5rem
+    .title
+      margin: 0 1rem 1rem 0
+      font-weight: bold
+  .btnBg
+    position: relative
+    width: 250px
+    min-height: 60px
+    color: #fad183
+    background: #1e6a6e
+    border-radius: 100px
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+    margin-top: 5rem
+    .btnText
+      font-weight: bold
+      &::before
+        content: attr(data-txt)
+        font-size: 13px
+        background: #fad183
+        color: #1e6a6e
+        border-radius: 1rem
+        padding: .1rem .5rem
+        margin-right: .5rem
+    .btnIcon
+      position: absolute
+      right: 30px
+      width: 6px
+      height: 12px
+      &::before, &::after
+        content: ''
+        width: 6px
+        height: 12px
+        border-radius: 0 100% 100% 0/50%
+        border: 2px solid #99BBBD
+        border-left: none
+        position: absolute
+        transition: .2s all
+      &::before
+        transform: translateX(-15px)
+        opacity: 0
+    .catTail
+      width: 90px
+      height: 90px
+      position: absolute
+      top: -33px
+      right: -63px
+      z-index: -1
+      transition: .2s all
+    .catBody
+      width: 90px
+      position: absolute
+      z-index: -1
+      bottom: 30px
+      opacity: 0
+    &:hover
+      .btnIcon::after
+        opacity: 0
+        transform: translateX(15px)
+      .btnIcon::before
+        opacity: 1
+        transform: translateX(0)

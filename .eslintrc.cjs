@@ -132,6 +132,7 @@ module.exports = {
         'png': 'always',
         'json': 'always',
         'css': 'always',
+        'gif': 'always',
       },
     ],
     "react/no-unstable-nested-components": "off",

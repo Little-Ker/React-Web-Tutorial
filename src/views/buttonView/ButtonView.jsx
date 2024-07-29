@@ -4,6 +4,8 @@ import TextInput from '@/components/textInput'
 import CodeResult from '@/components/codeResult'
 import ButtonDemo1 from './sub/button1/buttonDemo1'
 import ButtonCode1 from './sub/button1/buttonCode1'
+import ButtonDemo2 from './sub/button2/buttonDemo2'
+import ButtonCode2 from './sub/button2/buttonCode2'
 
 function TextView() {
   const [inputText, setInputText] = useState('TEST')
@@ -20,6 +22,10 @@ function TextView() {
       <CodeResult
         demo={<ButtonDemo1 inputText={inputText} />}
         code={<ButtonCode1 />}
+      />
+      <CodeResult
+        demo={<ButtonDemo2 inputText={inputText} />}
+        code={<ButtonCode2 />}
       />
     </div>
   )
