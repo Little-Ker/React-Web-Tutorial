@@ -23,23 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const initData = async () => {
-      // const permissions = await permissionsAPI()
-
-      const curValidRoutes = routes
-        ?.filter(({ enable, visible }) => enable && visible)
-        ?.map(curPage => ({
-          ...curPage,
-          routes: curPage?.routes?.filter(({
-            id, isDev, visible, enable,
-          }) => {
-            if (visible && enable) {
-              return isDev
-            }
-            return false
-          }),
-        }))
-        ?.filter(cur => (!cur?.routes && (cur?.isDev)) || cur?.routes?.length > 0)
-
+      const curValidRoutes = routes?.filter(({ visible }) => visible)
       setValidRoutes(curValidRoutes)
     }
     initData()
@@ -48,7 +32,7 @@ export default function Navbar() {
   const [checked, setChecked] = useState([])
 
   useEffect(() => {
-    const checkList = validRoutes.map((mainRoute) => {
+    const checkList = validRoutes?.map((mainRoute) => {
       const findPath = mainRoute?.routes?.find(route => location?.pathname === `${route?.path}`)
       return !!findPath
     })
