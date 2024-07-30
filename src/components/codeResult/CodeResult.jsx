@@ -9,14 +9,14 @@ import {
 import styles from './codeResult.module.sass'
 
 function CodeResult(props) {
-  const { demo, code } = props
+  const { demo, code, name } = props
 
   const [isShowCode, setIsShowCode] = useState(false)
 
   return (
     <div className={styles.codeResult}>
       <div className={styles.codeBorder}>
-        <p className={styles.resultTitle}>DEMO</p>
+        <p className={styles.resultTitle}>{`DEMO - ${name}`}</p>
         <div className={styles.result}>
           {demo}
         </div>
@@ -38,11 +38,13 @@ function CodeResult(props) {
 CodeResult.propTypes = {
   demo: PropTypes.node,
   code: PropTypes.node,
+  name: PropTypes.string,
 }
 
 CodeResult.defaultProps = {
   demo: null,
   code: null,
+  name: '',
 }
 
 export default CodeResult

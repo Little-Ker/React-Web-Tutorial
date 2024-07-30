@@ -9,6 +9,7 @@ import { Backdrop, CircularProgress } from '@mui/material'
 import routes from '@/router/routes'
 import history from '@/router/history'
 import Navbar from '@/components/navbar'
+import SubNavbar from '@/components/subNavbar/SubNavbar'
 import loading from '@/zustand/loading'
 import PopDialog from '@/components/popDialog'
 import vars from '@/globalTheme/variables.module.sass'
@@ -19,7 +20,7 @@ import InvalidPage from '@/views/invalidPage'
 function RouterPage() {
   const privateRoute = useCallback(route => (
     <Route
-      key={route.key}
+      key={route.id}
       path={route.path}
       exact={route.exact}
       element={<route.component />}
@@ -59,6 +60,9 @@ function App() {
           >
             <RouterPage />
           </div>
+        </Suspense>
+        <Suspense fallback={<div />}>
+          <SubNavbar />
         </Suspense>
       </Router>
       <Suspense>

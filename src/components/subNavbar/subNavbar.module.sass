@@ -1,0 +1,23 @@
+@use 'src/globalTheme/variables.module' as vrbs
+
+.root
+  padding: 1rem 1.5rem
+  right: 5px
+  z-index: 999
+  background: #fff
+  width: 240px
+  min-width: 240px
+  height: 100vh
+  border-left: 1px solid #ddd
+  display: flex
+  flex-direction: column
+  .title
+    color: rgba(vrbs.$cPrimary, 0.5)
+    margin: 1rem 0 1.5rem 0
+    font-weight: bold
+  .subTitle
+    color: rgba(vrbs.$cPrimary, 0.5)
+    margin-bottom: .8rem
+    font-weight: bold
+    &:last-child
+      margin-bottom: 0

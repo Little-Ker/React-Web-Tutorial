@@ -75,7 +75,7 @@ export default function Navbar() {
 
   const menuLink = useCallback(route => (
     <Link
-      key={route.key}
+      key={route.id}
       to={route.path}
       className={clsx(styles.subLink, location?.pathname === `${route.path}` && styles['subLink--active'])}
     >
@@ -100,7 +100,7 @@ export default function Navbar() {
       </div>
       <div>
         {validRoutes?.map((mainRoute, index) => (
-          <div key={mainRoute.key}>
+          <div key={mainRoute.id}>
             {(mainRoute?.routes) ? (
               <div
                 role="button"
@@ -123,7 +123,7 @@ export default function Navbar() {
               </div>
             ) : (
               <Link
-                key={mainRoute.key}
+                key={mainRoute.id}
                 to={mainRoute.path}
                 className={clsx(styles.mainLink, location?.pathname === `${mainRoute.path}` && styles['mainLink--active'])}
               >
