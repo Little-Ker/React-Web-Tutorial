@@ -1,0 +1,78 @@
+$cBtnBg: #002C83
+$cBtnText: #fff
+
+.root
+  position: relative
+  padding: 1rem
+  display: flex
+  .display
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-right: 5rem
+    .title
+      margin: 0 1rem 1rem 0
+      font-weight: bold
+  .button
+    width: 200px
+    height: 55px
+    border: 1px solid $cBtnBg
+    background: $cBtnText
+    border-radius: 40px
+    padding: .8rem 0
+    display: flex
+    align-items: center
+    font-size: 14px
+    color: $cBtnBg
+    overflow: hidden
+    transition: .3s all
+    position: relative
+    cursor: pointer
+    .textList
+      width: 100%
+      position: absolute
+      transition: .3s all
+      transform: translateY(0)
+      .runText
+        display: flex
+        align-items: center
+        width: 100%
+        white-space: nowrap
+        position: absolute
+        color: $cBtnBg
+        font-weight: bold
+        top: 0
+        bottom: 0
+        animation: marquee 18s linear infinite
+        @for $i from 1 through 2
+          &.run#{$i}
+            animation-delay: -#{$i * 6}s
+
+        @for $i from 1 through 3
+          &.bottomRun#{$i}
+            animation-delay: -#{($i - 1) * 6 + 1}s
+      span
+        margin: 0 .3rem
+      &.bottomText
+        bottom: -30px
+    .icon
+      width: 1.2rem
+      transform: rotate(-45deg)
+      margin-top: 5px
+      .iconColor
+        stroke: $cBtnBg
+    &:hover, &.btnHover
+      background: $cBtnBg
+      .textList
+        transform: translateY(-55px)
+        .iconColor
+          stroke: $cBtnText
+        .runText
+          color: $cBtnText
+
+
+@keyframes marquee
+  0%
+    transform: translateX(-100%)
+  100%
+    transform: translateX(100%)

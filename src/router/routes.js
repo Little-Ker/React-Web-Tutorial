@@ -46,6 +46,11 @@ const routes = [
       demo: React.lazy(() => import('@/views/buttonView/button2/buttonDemo2')),
       code: React.lazy(() => import('@/views/buttonView/button2/buttonCode2')),
       name: '貓咪按鈕',
+    }, {
+      id: 'carouselButton',
+      demo: React.lazy(() => import('@/views/buttonView/carouselButton/carouselBtnDemo')),
+      code: React.lazy(() => import('@/views/buttonView/carouselButton/carouselBtnCode')),
+      name: '輪播按鈕',
     }],
   },
 ]
