@@ -1,6 +1,6 @@
 # DataLakeBackend-react
 
-> Game Provider - 代理後台系統
+> web 樣式範例
 
 ## 使用方法
 
@@ -21,8 +21,6 @@
 
 ## 後台功能
 
-- 多國語系
-- 登入系統（路徑權限設定）
 - 使用 material ui 框架，並配置好主題色
 - 使用 zusatnd 做狀態管理
 
